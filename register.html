@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Register | Super Electronics</title>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Super Electronics - Registration</h2>
+        <form action="register.php" method="post">
+            <div class="input-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="input-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.*\s).{6,}" required>
+                <!-- Explanation of the pattern:
+                     (?=.*\d): At least one digit
+                     (?=.*[a-z]): At least one lowercase letter
+                     (?=.*[A-Z]): At least one uppercase letter
+                     (?=.*\W): At least one special character
+                     (?!.*\s): No whitespace allowed
+                     .{6,}: Minimum length of 6 characters -->
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" pattern=".+@.+" title="Enter a valid email address" required>
+                <!-- Ensure the email contains the @ sign -->
+            </div>
+
+            <button type="submit" name="register">Register</button>
+        </form>
+
+        <div class="register-link">
+            <p>Already registered? <a href="index.html">Log in here</a></p>
+        </div>
+    </div>
+</body>
+</html>
